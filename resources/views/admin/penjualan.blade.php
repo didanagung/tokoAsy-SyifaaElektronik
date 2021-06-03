@@ -11,9 +11,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Tanggal</th>
                 <th scope="col">Nama Barang</th>
-                {{-- <th scope="col">Gambar</th> --}}
-                {{-- <th scope="col">Harga</th> --}}
-                <th scope="col">Jumlah</th>
+                <th scope="col">Terjual</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
@@ -23,11 +21,10 @@
                   <th scope="row">{{$loop->iteration}}</th>
                   <td>{{$penjualan->tanggal}}</td>
                   <td>{{$penjualan->barang->nama_barang}}</td>
-                  {{-- <td>{{'Rp '. number_format($penjualan->harga)}}</td> --}}
-                  <td>{{$penjualan->jumlah}}</td>
+                  <td>{{$penjualan->terjual}}</td>
                   <td>
-                    <a href="/barang/{{$penjualan->id}}/edit" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="/barang/{{$penjualan->id}}/jual" class="btn btn-success btn-sm">Penjualan</a>
+                    {{-- <a href="/barang/{{$penjualan->id}}/edit" class="btn btn-primary btn-sm">Edit</a> --}}
+                    <a href="/barang/{{$penjualan->id}}/jual" class="btn btn-danger btn-sm">Hapus</a>
                     {{-- <form action="/barang/{{$barang->id}}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')

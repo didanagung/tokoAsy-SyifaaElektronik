@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use App\Models\Penjualan;
 use Illuminate\Http\Request;
 
@@ -27,11 +28,14 @@ class PenjualanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
+        
         $data = [
-            'judul' => 'Tambah Data Penjualan Hari Ini'
+            'judul' => "Tambah Data Penjualan Hari Ini",
+            'penjualan' => Barang::find($id)
         ];
+        // dd($data['penjualan']);
         return view('admin.tambahPenjualan', ['data' => $data]);
     }
 

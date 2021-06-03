@@ -16,8 +16,8 @@ class BuatTabelPenjualan extends Migration
         Schema::create('pejualan', function (Blueprint $table) {
             $table->id();
             $table->integer('barang_id')->nullable();
-            $table->timestamp('tanggal')->nullable();
-            $table->integer('jumlah')->nullable();
+            $table->date('tanggal')->nullable();
+            $table->integer('terjual')->nullable();
             $table->timestamps();
         });
     }
