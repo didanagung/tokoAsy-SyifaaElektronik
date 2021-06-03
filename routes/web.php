@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\Auth\LoginController;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\Auth\RegisterController;
 
 /*
@@ -26,6 +28,8 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::delete('/barang/{id}', [BarangController::class, 'destroy']);
     Route::get('/barang/{id}/edit', [BarangController::class, 'edit']);
     Route::patch('/barang/{id}/update', [BarangController::class, 'update']);
+    Route::get('/barang/{id}/jual', [PenjualanController::class, 'create']);
+    Route::get('/penjualan', [PenjualanController::class, 'index']);
 });
 
 Auth::routes(['verify'=>true]);

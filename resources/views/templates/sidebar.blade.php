@@ -32,6 +32,13 @@
                     <i class="fas fa-fw fa-edit"></i>
                     <span>Tambah Barang</span></a>
             </li>
+            
+            <!-- Nav Item - Daftar Penjualan -->
+            <li class="nav-item">
+                <a class="nav-link" href="/penjualan">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Daftar Penjualan</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">

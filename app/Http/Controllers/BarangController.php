@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class BarangController extends Controller
 {
@@ -19,6 +21,7 @@ class BarangController extends Controller
             'judul' => 'Daftar Barang',
             'barang' => Barang::paginate(5)
         ];
+        // Alert::success('Success Title', 'Success Message');
 
         return view('admin.index', ['data' => $data]);
     }
@@ -64,7 +67,7 @@ class BarangController extends Controller
             'jumlah' => $request->jumlah,
             'gambar' => $imgName
         ]);
-        return redirect('/barang')->with('status', 'Data Barang Berhasil Ditambahkan!');
+        return redirect('/barang')->with('success', 'Data Berhasil Ditambahkan');
 
     }
 
@@ -150,7 +153,7 @@ class BarangController extends Controller
             'jumlah' => $request->jumlah,
             'gambar' => $imgName
         ]);
-        return redirect('/barang')->with('status', 'Data Barang Berhasil Diedit!');
+        return redirect('/barang')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -174,6 +177,6 @@ class BarangController extends Controller
         }
         $del->delete();
 
-        return redirect('/barang')->with('hapus', 'Data Barang Berhasil Dihapus!');
+        return redirect('/barang')->with('info', 'Data berhasil di hapus!');
     }
 }

@@ -5,17 +5,6 @@
   <div class="row">
     <div class="col">
         <h3>{{($data['judul'])}}</h3>
-
-        @if (session('status'))
-            <div class="alert alert-success">
-                {{session('status')}}
-            </div>
-        @elseif (session('hapus'))
-            <div class="alert alert-danger">
-              {{session('hapus')}}
-            </div>
-        @endif
-
         <table class="table mt-4">
             <thead>
               <tr>
@@ -37,6 +26,7 @@
                   <td>{{$barang->jumlah}}</td>
                   <td>
                     <a href="/barang/{{$barang->id}}/edit" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="/barang/{{$barang->id}}/jual" class="btn btn-success btn-sm">Penjualan</a>
                     <form action="/barang/{{$barang->id}}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')

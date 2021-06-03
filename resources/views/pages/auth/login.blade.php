@@ -15,7 +15,7 @@
                         @csrf
                         <div class="form-group">
                             <input type="email" name="email" class="form-control form-control-user"
-                            id="exampleInputEmail" aria-describedby="emailHelp"
+                            id="exampleInputEmail" aria-describedby="emailHelp" autofocus
                             placeholder="Alamat Email">
                         </div>
                         <div class="form-group">
