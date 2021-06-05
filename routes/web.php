@@ -28,14 +28,13 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::delete('/barang/{id}', [BarangController::class, 'destroy']);
     Route::get('/barang/{id}/edit', [BarangController::class, 'edit']);
     Route::patch('/barang/{id}/update', [BarangController::class, 'update']);
-    Route::get('/barang/{id}/jual', [PenjualanController::class, 'create']);
     Route::get('/penjualan', [PenjualanController::class, 'index']);
+    Route::post('/penjualan', [PenjualanController::class, 'store']);
+    Route::get('/barang/{id}/jual', [PenjualanController::class, 'create']);
 });
 
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::view('/', 'pages.auth.login');
-// Route::view('/register', 'pages.auth.register');
+
 Route::get('/', [LoginController::class, 'showLoginForm']);
-// Route::get('/register', [RegisterController::class, 'showRegistrationForm']);

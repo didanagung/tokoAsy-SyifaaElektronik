@@ -6,7 +6,7 @@
         <div class="col-lg-7">
             <h1 class="mb-4">{{$data['judul']}}</h1>
 
-            <form action="#" method="post">
+            <form action="/penjualan" method="post">
                     @csrf
                       <div class="form-group row">
                         <label for="nama_barang" class="col-sm-4 col-form-label">Nama Barang</label>
@@ -18,7 +18,7 @@
                       <div class="form-group row">
                         <label for="Jumlah" class="col-sm-4 col-form-label">Tersedia</label>
                         <div class="col-sm-8">
-                          <input type="text" readonly class="form-control-plaintext" id="Jumlah" name="Jumlah" value="{{$data['penjualan']->jumlah}} barang">
+                          <input type="text" readonly class="form-control-plaintext" id="Jumlah" name="Jumlah" value="{{$data['penjualan']->jumlah}}">
                         </div>
                       </div>
 
@@ -36,9 +36,9 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="Tanggal" class="col-sm-4 col-form-label">Tanggal</label>
+                            <label for="tanggal" class="col-sm-4 col-form-label">Tanggal</label>
                             <div class="col-sm-8">
-                                <input type="date" class="form-control" id="Tanggal" name="Tanggal">
+                                <input type="date" class="form-control" id="tanggal" name="tanggal">
                             </div>
                         </div>
                         
@@ -49,7 +49,7 @@
                           </div>
                         </div>
                     
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-primary">Tambah</button>
                   </form>
         </div>
     </div>

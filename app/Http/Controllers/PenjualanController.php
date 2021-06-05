@@ -47,7 +47,13 @@ class PenjualanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        Penjualan::create([
+            'barang_id' => $request->barang_id,
+            'tanggal' => $request->tanggal,
+            'terjual' => $request->terjual
+        ]);
+        return redirect('/penjualan')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
