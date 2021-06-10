@@ -17,7 +17,7 @@ class PenjualanController extends Controller
     {
         $data = [
             'judul' => 'Daftar Penjualan',
-            'penjualan' => Penjualan::all()
+            'penjualan' => Penjualan::paginate(5)
         ];
 
         return view('admin.penjualan', ['data' => $data]);
@@ -47,7 +47,7 @@ class PenjualanController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        // dd($request);
         Penjualan::create([
             'barang_id' => $request->barang_id,
             'tanggal' => $request->tanggal,
@@ -98,6 +98,8 @@ class PenjualanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // dd($id);
+        Penjualan::find($id)->delete();
+        return redirect('/penjualan')->with('info', 'Data berhasil di hapus!');
     }
 }

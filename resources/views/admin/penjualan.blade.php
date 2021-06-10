@@ -23,21 +23,16 @@
                   <td>{{$penjualan->barang->nama_barang}}</td>
                   <td>{{$penjualan->terjual}}</td>
                   <td>
-                    {{-- <a href="/barang/{{$penjualan->id}}/edit" class="btn btn-primary btn-sm">Edit</a> --}}
-                    <a href="/barang/{{$penjualan->id}}/jual" class="btn btn-danger btn-sm">Hapus</a>
-                    {{-- <form action="/barang/{{$barang->id}}" method="POST" class="d-inline">
+                    <form action="/penjualan/{{$penjualan->id}}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm" onclick="return confirm('Yakin akan menghapus barang ini?')">Hapus</button>
-                    </form> --}}
+                    </form>
                   </td>
                 </tr>
                 @endforeach
             </tbody>
           </table>
-          {{-- <div class="d-flex justify-content-center">
-            {!! $data['barang']->links() !!}
-        </div>  --}}
        </div>
     </div>
   </div>

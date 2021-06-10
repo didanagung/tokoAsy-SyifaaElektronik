@@ -30,6 +30,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::patch('/barang/{id}/update', [BarangController::class, 'update']);
     Route::get('/penjualan', [PenjualanController::class, 'index']);
     Route::post('/penjualan', [PenjualanController::class, 'store']);
+    Route::delete('/penjualan/{id}', [PenjualanController::class, 'destroy']);
     Route::get('/barang/{id}/jual', [PenjualanController::class, 'create']);
 });
 
