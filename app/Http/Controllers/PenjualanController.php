@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Models\Penjualan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Exports\PenjualanExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Collection;
 
 class PenjualanController extends Controller
 {
@@ -17,8 +21,9 @@ class PenjualanController extends Controller
     {
         $data = [
             'judul' => 'Daftar Penjualan',
-            'penjualan' => Penjualan::paginate(5)
+            'penjualan' => collect(Penjualan::getLastestPenjualan())->sortBy([['tanggal', 'desc']])
         ];
+
 
         return view('admin.penjualan', ['data' => $data]);
     }
@@ -102,4 +107,28 @@ class PenjualanController extends Controller
         Penjualan::find($id)->delete();
         return redirect('/penjualan')->with('info', 'Data berhasil di hapus!');
     }
+
+    // public function cari(request $request)
+    // {
+    //     // dd($request);
+    //     $cari = $request->cari;
+
+    //     $penjualan = DB::table('penjualan')
+    //     ->join('barang', 'barang.id', '=', 'penjualan.barang_id')
+	// 	->where('tanggal','like',"%".$cari."%")
+	// 	->paginate(5);
+
+    //     $data = [
+    //         'judul' => 'Daftar Barang',
+    //         'penjualan' => $penjualan
+    //     ];
+
+    //     return view('admin.penjualan', ['data' => $data]);
+    // }
+
+    function export()
+    {
+        return Excel::download(new PenjualanExport, 'penjualan.xlsx');
+    }
+
 }

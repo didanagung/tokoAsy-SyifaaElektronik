@@ -24,14 +24,17 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/barang/{slug}/detail', [AdminController::class, 'show']);
     Route::get('/barang', [BarangController::class, 'index']);
     Route::post('/barang', [BarangController::class, 'store']);
+    Route::get('/barang/cari', [BarangController::class, 'cari']);
     Route::get('/barang/tambah', [BarangController::class, 'create']);
     Route::delete('/barang/{id}', [BarangController::class, 'destroy']);
     Route::get('/barang/{id}/edit', [BarangController::class, 'edit']);
     Route::patch('/barang/{id}/update', [BarangController::class, 'update']);
     Route::get('/penjualan', [PenjualanController::class, 'index']);
     Route::post('/penjualan', [PenjualanController::class, 'store']);
+    Route::get('/penjualan/cari', [PenjualanController::class, 'cari']);
     Route::delete('/penjualan/{id}', [PenjualanController::class, 'destroy']);
     Route::get('/barang/{id}/jual', [PenjualanController::class, 'create']);
+    Route::get('/export-penjualan', [PenjualanController::class, 'export']);
 });
 
 Auth::routes(['verify'=>true]);

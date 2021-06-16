@@ -13,7 +13,7 @@ class BuatTabelPenjualan extends Migration
      */
     public function up()
     {
-        Schema::create('pejualan', function (Blueprint $table) {
+        Schema::create('penjualan', function (Blueprint $table) {
             $table->id();
             $table->integer('barang_id')->nullable();
             $table->date('tanggal')->nullable();

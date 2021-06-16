@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -179,4 +180,22 @@ class BarangController extends Controller
 
         return redirect('/barang')->with('info', 'Data berhasil di hapus!');
     }
+
+    public function cari(request $request)
+    {
+        // dd($request->cari);
+        $cari = $request->cari;
+
+        $barang = DB::table('barang')
+		->where('nama_barang','like',"%".$cari."%")
+		->paginate(5);
+
+        $data = [
+            'judul' => 'Daftar Barang',
+            'barang' => $barang
+        ];
+
+        return view('admin.index', ['data' => $data]);
+    }
+
 }
