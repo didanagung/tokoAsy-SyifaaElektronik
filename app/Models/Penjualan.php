@@ -31,8 +31,6 @@ class Penjualan extends Model
         ->join('barang', 'barang.id', '=', 'penjualan.barang_id')
         ->select('penjualan.id', 'barang.nama_barang', 'penjualan.tanggal', 'penjualan.terjual')
         ->get()->toArray();
-
-        // $collection = collect($penjualan);
         return $penjualan;
     }
 

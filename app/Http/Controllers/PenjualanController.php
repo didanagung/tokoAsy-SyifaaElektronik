@@ -108,24 +108,6 @@ class PenjualanController extends Controller
         return redirect('/penjualan')->with('info', 'Data berhasil di hapus!');
     }
 
-    // public function cari(request $request)
-    // {
-    //     // dd($request);
-    //     $cari = $request->cari;
-
-    //     $penjualan = DB::table('penjualan')
-    //     ->join('barang', 'barang.id', '=', 'penjualan.barang_id')
-	// 	->where('tanggal','like',"%".$cari."%")
-	// 	->paginate(5);
-
-    //     $data = [
-    //         'judul' => 'Daftar Barang',
-    //         'penjualan' => $penjualan
-    //     ];
-
-    //     return view('admin.penjualan', ['data' => $data]);
-    // }
-
     function export()
     {
         return Excel::download(new PenjualanExport, 'penjualan.xlsx');

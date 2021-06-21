@@ -26,7 +26,7 @@
                       <div class="form-group row">
                           <label for="terjual" class="col-sm-4 col-form-label">Terjual</label>
                           <div class="col-sm-8">
-                              <input type="number" class="form-control" id="terjual" name="terjual" min="0">
+                              <input type="number" class="form-control" id="terjual" name="terjual" min="0" max="{{$data['penjualan']->jumlah}}">
                             </div>
                             @error('terjual')
                             <div class="invalid-feedback">
