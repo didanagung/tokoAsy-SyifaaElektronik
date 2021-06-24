@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-sm-8">
                             <div class="mb-3">
-                                <label for="gambar" class="form-label "><b>Silahkan Pilih File</b></label>
+                                <label for="gambar" class="form-label "><b>Silahkan Pilih Gambar</b></label>
                                 <input class="form-control-file" type="file" id="gambar" name="gambar" onchange="previewImage()">
                             </div>
                         </div>

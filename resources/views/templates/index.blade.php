@@ -97,24 +97,6 @@
     </div>
 
     <script>
-        function GetURLParameter(sParam)
-    {
-        const sPageURL = window.location.search.substring(1);
-        let sURLVariables = sPageURL.split('&');
-        for (let i = 0; i < sURLVariables.length; i++) 
-        {
-            var sParameterName = sURLVariables[i].split('=');
-            if (sParameterName[0] == sParam) 
-            {
-                return sParameterName[1];
-            }
-        }
-    }
-
-        const barang = GetUrlParameter('/barang');
-        let item = document.querySelector('.nav-item');
-        item.classList.add("active");
-
         function previewImage() {
                 const gambar = document.querySelector('#gambar');
                 const imgPreview = document.querySelector('.img-preview');
