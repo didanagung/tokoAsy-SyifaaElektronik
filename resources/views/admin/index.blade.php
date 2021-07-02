@@ -23,8 +23,8 @@
             <thead>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama</th>
                 <th scope="col">Gambar</th>
+                <th scope="col">Nama</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Jumlah</th>
                 <th scope="col">Aksi</th>

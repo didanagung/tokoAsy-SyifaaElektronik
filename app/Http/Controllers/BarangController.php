@@ -73,17 +73,6 @@ class BarangController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -165,7 +154,6 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        // dd($id);
         $del = Barang::find($id);
         $hps = $del->gambar;
         $gmbrHps = public_path('img/' . $hps);

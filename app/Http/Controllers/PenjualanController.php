@@ -52,47 +52,12 @@ class PenjualanController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         Penjualan::create([
             'barang_id' => $request->barang_id,
             'tanggal' => $request->tanggal,
             'terjual' => $request->terjual
         ]);
         return redirect('/penjualan')->with('success', 'Data Berhasil Ditambahkan');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**
@@ -103,7 +68,6 @@ class PenjualanController extends Controller
      */
     public function destroy($id)
     {
-        // dd($id);
         Penjualan::find($id)->delete();
         return redirect('/penjualan')->with('info', 'Data berhasil di hapus!');
     }
@@ -112,5 +76,4 @@ class PenjualanController extends Controller
     {
         return Excel::download(new PenjualanExport, 'penjualan.xlsx');
     }
-
 }
