@@ -19,6 +19,8 @@
           </div>
         </form>
 
+        <a href="/export-barang" class="btn btn-success">Download Laporan</a>
+
         <table class="table mt-4">
             <thead>
               <tr>

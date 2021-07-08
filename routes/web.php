@@ -5,8 +5,6 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\Auth\LoginController;
-use RealRashid\SweetAlert\Facades\Alert;
-use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +33,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::delete('/penjualan/{id}', [PenjualanController::class, 'destroy']);
     Route::get('/barang/{id}/jual', [PenjualanController::class, 'create']);
     Route::get('/export-penjualan', [PenjualanController::class, 'export']);
+    Route::get('/export-barang', [BarangController::class, 'export']);
 });
 
 Auth::routes(['verify'=>true]);

@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Models\Penjualan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Exports\PenjualanExport;
 use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Support\Collection;
 
 class PenjualanController extends Controller
 {

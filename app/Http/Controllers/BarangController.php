@@ -6,7 +6,8 @@ use App\Models\Barang;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use RealRashid\SweetAlert\Facades\Alert;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\BarangExport;
 
 
 class BarangController extends Controller
@@ -171,7 +172,6 @@ class BarangController extends Controller
 
     public function cari(request $request)
     {
-        // dd($request->cari);
         $cari = $request->cari;
 
         $barang = DB::table('barang')
@@ -184,6 +184,11 @@ class BarangController extends Controller
         ];
 
         return view('admin.index', ['data' => $data]);
+    }
+
+    public function export()
+    {
+        return Excel::download(new BarangExport, 'Barang.xlsx');
     }
 
 }
